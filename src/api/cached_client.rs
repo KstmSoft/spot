@@ -630,8 +630,15 @@ impl SpotifyApiClient for CachedSpotifyClient {
                 .into_iter()
                 .map(|saved| saved.into())
                 .collect::<Vec<ArtistSummary>>();
+                
+            let playlists = results
+                .playlists
+                .unwrap_or_default()
+                .into_iter()
+                .map(|playlist| playlist.into())
+                .collect::<Vec<PlaylistDescription>>();
 
-            Ok(SearchResults { albums, artists })
+            Ok(SearchResults { albums, artists, playlists })
         })
     }
 

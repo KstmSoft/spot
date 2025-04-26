@@ -495,7 +495,7 @@ impl SpotifyClient {
     ) -> SpotifyRequest<'_, (), RawSearchResults> {
         let query = SearchQuery {
             query,
-            types: vec![SearchType::Album, SearchType::Artist],
+            types: vec![SearchType::Album, SearchType::Artist, SearchType::Playlist],
             limit,
             offset,
         };

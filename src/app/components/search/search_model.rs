@@ -56,6 +56,15 @@ impl SearchResultsModel {
             .map_state_opt(|s| Some(&s.browser.search_state()?.artist_results))
     }
 
+    pub fn get_playlist_results(&self) -> Option<impl Deref<Target = Vec<PlaylistDescription>> + '_> {
+        self.app_model
+            .map_state_opt(|s| Some(&s.browser.search_state()?.playlist_results))
+    }
+
+    pub fn open_playlist(&self, id: String) {
+        self.dispatcher.dispatch(AppAction::ViewPlaylist(id));
+    }
+
     pub fn open_album(&self, id: String) {
         self.dispatcher.dispatch(AppAction::ViewAlbum(id));
     }

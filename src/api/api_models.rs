@@ -50,6 +50,7 @@ pub struct Name<'a> {
 pub enum SearchType {
     Artist,
     Album,
+    Playlist,
 }
 
 impl SearchType {
@@ -57,6 +58,7 @@ impl SearchType {
         match self {
             Self::Artist => "artist",
             Self::Album => "album",
+            Self::Playlist => "playlist",
         }
     }
 }
@@ -409,6 +411,7 @@ impl FailibleTrackItem {
 pub struct RawSearchResults {
     pub albums: Option<Page<Album>>,
     pub artists: Option<Page<Artist>>,
+    pub playlists: Option<Page<Playlist>>,
 }
 
 impl From<Artist> for ArtistSummary {

@@ -37,6 +37,9 @@ mod imp {
 
         #[template_child]
         pub artist_results: TemplateChild<gtk::FlowBox>,
+        
+        #[template_child]
+        pub playlist_results: TemplateChild<gtk::FlowBox>,
     }
 
     #[glib::object_subclass]
@@ -148,6 +151,28 @@ impl SearchResultsWidget {
                 })
             });
     }
+    
+    fn bind_playlist_results<F>(&self, worker: Worker, store: &gio::ListStore, on_playlist_pressed: F)
+    where
+        F: Fn(String) + Clone + 'static,
+    {
+        self.imp()
+            .playlist_results
+            .bind_model(Some(store), move |item| {
+                wrap_flowbox_item(item, |album_model| {
+                    let f = on_playlist_pressed.clone();
+                    let album = AlbumWidget::for_model(album_model, worker.clone());
+                    album.connect_album_pressed(clone!(
+                        #[weak]
+                        album_model,
+                        move || {
+                            f(album_model.uri());
+                        }
+                    ));
+                    album
+                })
+            });
+    }
 }
 
 pub struct SearchResults {
@@ -155,6 +180,7 @@ pub struct SearchResults {
     model: Rc<SearchResultsModel>,
     album_results_model: gio::ListStore,
     artist_results_model: gio::ListStore,
+    playlist_results_model: gio::ListStore,
     debouncer: Debouncer,
 }
 
@@ -165,6 +191,7 @@ impl SearchResults {
 
         let album_results_model = gio::ListStore::new::<AlbumModel>();
         let artist_results_model = gio::ListStore::new::<ArtistModel>();
+        let playlist_results_model = gio::ListStore::new::<AlbumModel>();
 
         widget.connect_go_back(clone!(
             #[weak]
@@ -195,7 +222,7 @@ impl SearchResults {
         );
 
         widget.bind_artists_results(
-            worker,
+            worker.clone(),
             &artist_results_model,
             clone!(
                 #[weak]
@@ -205,12 +232,25 @@ impl SearchResults {
                 }
             ),
         );
+        
+        widget.bind_playlist_results(
+            worker,
+            &playlist_results_model,
+            clone!(
+                #[weak]
+                model,
+                move |id| {
+                    model.open_playlist(id);
+                }
+            ),
+        );
 
         Self {
             widget,
             model,
             album_results_model,
             artist_results_model,
+            playlist_results_model,
             debouncer: Debouncer::new(),
         }
     }
@@ -235,6 +275,18 @@ impl SearchResults {
                     &artist.name,
                     &artist.photo,
                     &artist.id,
+                ));
+            }
+        }
+        if let Some(results) = self.model.get_playlist_results() {
+            self.playlist_results_model.remove_all();
+            for playlist in results.iter() {
+                self.playlist_results_model.append(&AlbumModel::new(
+                    &playlist.owner.display_name,
+                    &playlist.title,
+                    None,
+                    playlist.art.as_ref(),
+                    &playlist.id,
                 ));
             }
         }

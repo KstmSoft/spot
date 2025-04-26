@@ -74,7 +74,6 @@ template $SearchResultsWidget : Box {
         Expander {
           margin-start: 4;
           margin-end: 4;
-          margin-bottom: 4;
           expanded: true;
           vexpand: false;
           valign: start;
@@ -99,6 +98,37 @@ template $SearchResultsWidget : Box {
             /* Translators: This is the title of a section of the search results */
 
             label: _("Artists");
+          }
+        }
+
+        Expander {
+          margin-start: 4;
+          margin-end: 4;
+          margin-bottom: 4;
+          expanded: true;
+          vexpand: false;
+          valign: start;
+
+          ScrolledWindow {
+            vscrollbar-policy: never;
+            propagate-natural-height: false;
+            FlowBox playlist_results {
+              halign: start;
+              hexpand: true;
+              vexpand: false;
+              valign: start;
+              orientation: vertical;
+              max-children-per-line: 1;
+              selection-mode: none;
+              activate-on-single-click: false;
+            }
+          }
+
+          [label]
+          Label {
+            /* Translators: This is the title of a section of the search results */
+
+            label: _("Playlists");
           }
         }
       }

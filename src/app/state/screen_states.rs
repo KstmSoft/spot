@@ -331,6 +331,7 @@ pub struct SearchState {
     pub query: String,
     pub album_results: Vec<AlbumDescription>,
     pub artist_results: Vec<ArtistSummary>,
+    pub playlist_results: Vec<PlaylistDescription>,
 }
 
 impl Default for SearchState {
@@ -340,6 +341,7 @@ impl Default for SearchState {
             query: "".to_owned(),
             album_results: vec![],
             artist_results: vec![],
+            playlist_results: vec![],
         }
     }
 }
@@ -357,6 +359,7 @@ impl UpdatableState for SearchState {
             BrowserAction::SetSearchResults(results) => {
                 self.album_results = results.albums.clone();
                 self.artist_results = results.artists.clone();
+                self.playlist_results = results.playlists.clone();
                 vec![BrowserEvent::SearchResultsUpdated]
             }
             _ => vec![],
