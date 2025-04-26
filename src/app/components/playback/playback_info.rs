@@ -58,10 +58,10 @@ impl PlaybackInfoWidget {
             .set_label(&gettext("No song playing"));
         widget
             .playing_image
-            .set_icon_name(Some("emblem-music-symbolic"));
+            .set_icon_name(Some("folder-music-symbolic"));
         widget
             .playing_image
-            .set_icon_name(Some("emblem-music-symbolic"));
+            .set_icon_name(Some("folder-music-symbolic"));
     }
 
     pub fn set_info_visible(&self, visible: bool) {

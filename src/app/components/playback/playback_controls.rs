@@ -26,6 +26,12 @@ mod imp {
 
         #[template_child]
         pub repeat: TemplateChild<gtk::Button>,
+
+        #[template_child]
+        pub volume_slider: TemplateChild<gtk::Scale>,
+
+        #[template_child]
+        pub volume_icon: TemplateChild<gtk::Button>,
     }
 
     #[glib::object_subclass]
@@ -43,7 +49,14 @@ mod imp {
         }
     }
 
-    impl ObjectImpl for PlaybackControlsWidget {}
+    impl ObjectImpl for PlaybackControlsWidget {
+        fn constructed(&self) {
+            self.parent_constructed();
+            self.volume_slider.set_value(0.7);
+            self.volume_icon
+                .set_icon_name("audio-volume-medium-symbolic");
+        }
+    }
     impl WidgetImpl for PlaybackControlsWidget {}
     impl BoxImpl for PlaybackControlsWidget {}
 }
@@ -86,6 +99,19 @@ impl PlaybackControlsWidget {
         self.imp().repeat.set_icon_name(repeat_mode_icon);
     }
 
+    pub fn set_volume(&self, volume: f64) {
+        let volume_icon = match volume {
+            0.0 => "audio-volume-muted-symbolic",
+            value if (value > 0.0 && value <= 0.5) => "audio-volume-medium-symbolic",
+            value if (value > 0.5 && value <= 1.0) => "audio-volume-high-symbolic",
+            _ => "audio-volume-high-symbolic",
+        };
+        self.imp().volume_icon.set_icon_name(volume_icon);
+        imp::PlaybackControlsWidget::from_obj(self)
+            .volume_slider
+            .set_value(volume)
+    }
+
     pub fn connect_play_pause<F>(&self, f: F)
     where
         F: Fn() + 'static,
@@ -119,5 +145,16 @@ impl PlaybackControlsWidget {
         F: Fn() + 'static,
     {
         self.imp().repeat.connect_clicked(move |_| f());
+    }
+
+    pub fn connect_volume_changed<F>(&self, f: F)
+    where
+        F: Fn(f64) + 'static,
+    {
+        imp::PlaybackControlsWidget::from_obj(self)
+            .volume_slider
+            .connect_value_changed(move |value| {
+                f(value.value());
+            });
     }
 }

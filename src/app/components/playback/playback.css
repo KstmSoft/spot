@@ -29,3 +29,22 @@
     min-width: 40px;
     min-height: 40px;
 }
+
+.spotify-volume-slider trough {
+    min-height: 4px;
+    border-radius: 2px;
+    background-color: alpha(#fff, 0.3);
+}
+
+.spotify-volume-slider highlight {
+    border-radius: 2px;
+    background-color: #1DB954;
+}
+
+.spotify-volume-slider slider {
+    min-height: 12px;
+    min-width: 12px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
