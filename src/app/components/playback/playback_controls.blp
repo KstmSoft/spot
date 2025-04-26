@@ -4,54 +4,111 @@ template $PlaybackControlsWidget : Box {
   halign: center;
   hexpand: true;
   spacing: 8;
-  homogeneous: true;
+  homogeneous: false;  // Cambiado a false para permitir diferentes tamaños
 
-  ToggleButton shuffle {
-    receives-default: true;
-    halign: center;
-    valign: center;
-    has-frame: false;
-    icon-name: "media-playlist-shuffle-symbolic";
-    tooltip-text: _("Shuffle");
+  // Contenedor para controles secundarios (izquierda)
+  Box secondary_controls_left {
+    spacing: 8;
+
+    ToggleButton shuffle {
+      receives-default: true;
+      halign: center;
+      valign: center;
+      has-frame: false;
+      icon-name: "media-playlist-shuffle-symbolic";
+      tooltip-text: _("Shuffle");
+
+      styles [
+        "secondary-control"
+      ]
+    }
   }
 
-  Button prev {
-    receives-default: true;
+  // Contenedor para controles principales (siempre visibles)
+  Box primary_controls {
+    spacing: 8;
     halign: center;
-    valign: center;
-    has-frame: false;
-    icon-name: "media-skip-backward-symbolic";
-    tooltip-text: _("Previous");
+
+    Button prev {
+      receives-default: true;
+      halign: center;
+      valign: center;
+      has-frame: false;
+      icon-name: "media-skip-backward-symbolic";
+      tooltip-text: _("Previous");
+    }
+
+    Button play_pause {
+      receives-default: true;
+      halign: center;
+      valign: center;
+      icon-name: "media-playback-start-symbolic";
+      tooltip-text: "Play/Pause";
+
+      styles [
+        "circular",
+        "playback-button",
+      ]
+    }
+
+    Button next {
+      receives-default: true;
+      halign: center;
+      valign: center;
+      has-frame: false;
+      icon-name: "media-skip-forward-symbolic";
+      tooltip-text: _("Next");
+    }
   }
 
-  Button play_pause {
-    receives-default: true;
-    halign: center;
-    valign: center;
-    icon-name: "media-playback-start-symbolic";
-    tooltip-text: "Play/Pause";
+  // Contenedor para controles secundarios (derecha)
+  Box secondary_controls_right {
+    spacing: 8;
 
-    styles [
-      "circular",
-      "playback-button",
-    ]
-  }
+    Button repeat {
+      receives-default: true;
+      halign: center;
+      valign: center;
+      has-frame: false;
+      icon-name: "media-playlist-consecutive-symbolic";
+      tooltip-text: _("Repeat");
 
-  Button next {
-    receives-default: true;
-    halign: center;
-    valign: center;
-    has-frame: false;
-    icon-name: "media-skip-forward-symbolic";
-    tooltip-text: _("Next");
-  }
+      styles [
+        "secondary-control"
+      ]
+    }
 
-  Button repeat {
-    receives-default: true;
-    halign: center;
-    valign: center;
-    has-frame: false;
-    icon-name: "media-playlist-consecutive-symbolic";
-    tooltip-text: _("Repeat");
+    Box volume_container {
+      halign: end;
+      valign: center;
+      spacing: 2;
+
+      Button volume_icon {
+        icon-name: "audio-volume-medium-symbolic";
+        has-frame: false;
+        tooltip-text: _("Volume");
+      }
+
+      Scale volume_slider {
+        adjustment: Adjustment {
+          step-increment: 0.01;
+          page-increment: 0.10;
+          upper: 1.0;
+          lower: 0.0;
+        };
+        width-request: 100;
+        height-request: 16;
+        draw-value: false;
+        value-pos: right;
+
+        styles [
+          "spotify-volume-slider",
+        ]
+      }
+
+      styles [
+        "secondary-control"
+      ]
+    }
   }
 }

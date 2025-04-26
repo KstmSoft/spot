@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: spot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-26 13:50-0500\n"
+"POT-Creation-Date: 2025-04-25 18:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "An error occured. Check logs for details!"
 msgstr ""
 
-#: src/app/components/device_selector/widget.rs:135
+#: src/app/components/device_selector/widget.rs:138
 #: src/app/components/device_selector/device_selector.blp:9
 #: src/app/components/device_selector/device_selector.blp:37
 msgid "This device"
@@ -41,7 +41,7 @@ msgstr ""
 
 #. translators: This is part of a contextual menu attached to a single track; this entry adds a track at the end of the play queue.
 #: src/app/components/labels.rs:11
-#: src/app/components/selection/selection_toolbar.blp:36
+#: src/app/components/selection/selection_toolbar.blp:52
 msgid "Add to queue"
 msgstr ""
 
@@ -73,19 +73,19 @@ msgid "{} by {}"
 msgstr ""
 
 #. translators: This is a sidebar entry to browse to saved albums.
-#: src/app/components/navigation/factory.rs:33
+#: src/app/components/navigation/factory.rs:30
 #: src/app/components/sidebar/sidebar_item.rs:39
 msgid "Library"
 msgstr ""
 
 #. translators: This is a sidebar entry that marks that the entries below are playlists.
-#: src/app/components/navigation/factory.rs:54
+#: src/app/components/navigation/factory.rs:50
 #: src/app/components/sidebar/sidebar_item.rs:45
 msgid "Playlists"
 msgstr ""
 
 #. translators: This is a sidebar entry to browse to saved tracks.
-#: src/app/components/navigation/factory.rs:76
+#: src/app/components/navigation/factory.rs:71
 #: src/app/components/sidebar/sidebar_item.rs:41
 msgid "Saved tracks"
 msgstr ""
@@ -137,22 +137,22 @@ msgid "Unnamed playlist"
 msgstr ""
 
 #. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:65
+#: src/app/components/user_menu/user_menu.rs:70
 msgid "Preferences"
 msgstr ""
 
 #. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:67
+#: src/app/components/user_menu/user_menu.rs:72
 msgid "About"
 msgstr ""
 
 #. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:69
+#: src/app/components/user_menu/user_menu.rs:74
 msgid "Quit"
 msgstr ""
 
 #. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:74
+#: src/app/components/user_menu/user_menu.rs:79
 msgid "Log out"
 msgstr ""
 
@@ -189,134 +189,134 @@ msgid "Releases"
 msgstr ""
 
 #. Translators: This is the title of a section of the search results
-#: src/app/components/search/search.blp:69
+#: src/app/components/search/search.blp:70
 msgid "Albums"
 msgstr ""
 
 #. Translators: This is the title of a section of the search results
-#: src/app/components/search/search.blp:100
+#: src/app/components/search/search.blp:101
 msgid "Artists"
 msgstr ""
 
 #. Translators: Title for the empty search page (initial state).
-#: src/app/components/search/search.blp:110
+#: src/app/components/search/search.blp:111
 msgid "Search Spotify."
 msgstr ""
 
 #. Translators: Subtitle for the empty search page (initial state).
-#: src/app/components/search/search.blp:114
+#: src/app/components/search/search.blp:115
 msgid "Type to search."
 msgstr ""
 
 #. Translators: Header for a group of preference items regarding audio
-#: src/app/components/settings/settings.blp:13
+#: src/app/components/settings/settings.blp:11
 msgid "Audio"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:18
+#: src/app/components/settings/settings.blp:16
 msgid "Audio Backend"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:31
+#: src/app/components/settings/settings.blp:29
 msgid "ALSA Device"
 msgstr ""
 
 #. Translators: Description for the item (ALSA Device) in preferences
-#: src/app/components/settings/settings.blp:35
+#: src/app/components/settings/settings.blp:33
 msgid "Applied only if audio backend is ALSA"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:45
+#: src/app/components/settings/settings.blp:43
 msgid "Audio Quality"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:48
+#: src/app/components/settings/settings.blp:46
 msgid "Normal"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:49
+#: src/app/components/settings/settings.blp:47
 msgid "High"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:50
+#: src/app/components/settings/settings.blp:48
 msgid "Very high"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:58
+#: src/app/components/settings/settings.blp:56
 msgid "Gapless playback"
 msgstr ""
 
 #. Translators: Header for a group of preference items regarding the application's appearance
-#: src/app/components/settings/settings.blp:73
+#: src/app/components/settings/settings.blp:71
 msgid "Appearance"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:78
+#: src/app/components/settings/settings.blp:76
 msgid "Theme"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:81
+#: src/app/components/settings/settings.blp:79
 msgid "Light"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:82
+#: src/app/components/settings/settings.blp:80
 msgid "Dark"
 msgstr ""
 
-#: src/app/components/settings/settings.blp:83
+#: src/app/components/settings/settings.blp:81
 msgid "System"
 msgstr ""
 
 #. Translators: Header for a group of preference items regarding network
-#: src/app/components/settings/settings.blp:92
+#: src/app/components/settings/settings.blp:90
 msgid "Network"
 msgstr ""
 
 #. Translators: Title for an item in preferences
-#: src/app/components/settings/settings.blp:97
+#: src/app/components/settings/settings.blp:95
 msgid "Access Point Port"
 msgstr ""
 
 #. Translators: Longer description for an item (Access Point Port) in preferences
-#: src/app/components/settings/settings.blp:101
+#: src/app/components/settings/settings.blp:99
 msgid ""
 "Port used for connections to Spotify's Access Point. Set to 0 if any port is "
 "fine."
 msgstr ""
 
-#: src/app/components/selection/selection_toolbar.blp:49
+#: src/app/components/selection/selection_toolbar.blp:60
 msgid "Add to playlist..."
 msgstr ""
 
-#: src/app/components/selection/selection_toolbar.blp:61
+#: src/app/components/selection/selection_toolbar.blp:71
 msgid "Remove"
 msgstr ""
 
-#: src/app/components/selection/selection_toolbar.blp:78
+#: src/app/components/selection/selection_toolbar.blp:82
 msgid "Save to library"
 msgstr ""
 
 #. Translators: This refers to a music label
-#: src/app/components/details/release_details.blp:41
+#: src/app/components/details/release_details.blp:38
 msgid "Label"
 msgstr ""
 
 #. Translators: This refers to a release date
-#: src/app/components/details/release_details.blp:52
+#: src/app/components/details/release_details.blp:49
 msgid "Released"
 msgstr ""
 
 #. Translators: This refers to a number of tracks
-#: src/app/components/details/release_details.blp:63
+#: src/app/components/details/release_details.blp:60
 msgid "Tracks"
 msgstr ""
 
-#: src/app/components/details/release_details.blp:72
+#: src/app/components/details/release_details.blp:69
 msgid "Copyright"
 msgstr ""
 
@@ -343,18 +343,18 @@ msgstr ""
 
 #. Translators: Exit playlist edition
 #. Translators: Button label. Exits selection mode.
-#: src/app/components/playlist_details/playlist_headerbar.blp:53
-#: src/app/components/headerbar/headerbar.blp:49
+#: src/app/components/playlist_details/playlist_headerbar.blp:54
+#: src/app/components/headerbar/headerbar.blp:50
 msgid "Cancel"
 msgstr ""
 
 #. Translators: Finish playlist edition
-#: src/app/components/playlist_details/playlist_headerbar.blp:69
+#: src/app/components/playlist_details/playlist_headerbar.blp:70
 msgid "Done"
 msgstr ""
 
 #. Translators: Button label. Selects all visible songs.
-#: src/app/components/headerbar/headerbar.blp:63
+#: src/app/components/headerbar/headerbar.blp:64
 msgid "Select all"
 msgstr ""
 

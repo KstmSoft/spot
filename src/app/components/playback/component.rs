@@ -71,6 +71,11 @@ impl PlaybackModel {
         self.dispatcher
             .dispatch(PlaybackAction::Seek(position).into());
     }
+
+    fn change_volume(&self, volume: f64) {
+        self.dispatcher
+            .dispatch(PlaybackAction::SetVolume(volume).into())
+    }
 }
 
 pub struct PlaybackControl {
@@ -118,6 +123,11 @@ impl PlaybackControl {
             model,
             move || model.go_home()
         ));
+        widget.connect_volume_changed(clone!(
+            #[weak]
+            model,
+            move |volume| model.change_volume(volume)
+        ));
 
         Self {
             model,
@@ -155,6 +165,10 @@ impl PlaybackControl {
     fn sync_seek(&self, pos: u32) {
         self.widget.set_seek_position(pos as f64);
     }
+
+    fn sync_volume(&self, volume: f64) {
+        self.widget.set_volume(volume);
+    }
 }
 
 impl EventListener for PlaybackControl {
@@ -183,6 +197,9 @@ impl EventListener for PlaybackControl {
             }
             AppEvent::SelectionEvent(SelectionEvent::SelectionModeChanged(active)) => {
                 self.widget.set_seekbar_visible(!active);
+            }
+            AppEvent::PlaybackEvent(PlaybackEvent::VolumeSet(volume)) => {
+                self.sync_volume(*volume);
             }
             _ => {}
         }

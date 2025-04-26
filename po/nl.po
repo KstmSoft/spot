@@ -1,12 +1,25 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: Spot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-25 18:44-0500\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Spot\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. translators: This notification is the default message for unhandled errors. Logs refer to console output.
+#: src/app/batch_loader.rs:100 src/app/components/mod.rs:129
+msgid "An error occured. Check logs for details!"
+msgstr "Er is een fout opgetreden - bekijk het logboek!"
+
+#: src/app/components/device_selector/widget.rs:138
+#: src/app/components/device_selector/device_selector.blp:9
+#: src/app/components/device_selector/device_selector.blp:37
+msgid "This device"
+msgstr ""
 
 #. translators: This is part of a contextual menu attached to a single track; this entry allows viewing the album containing a specific track.
 #: src/app/components/labels.rs:5
@@ -20,7 +33,7 @@ msgstr "Link kopiëren"
 
 #. translators: This is part of a contextual menu attached to a single track; this entry adds a track at the end of the play queue.
 #: src/app/components/labels.rs:11
-#: src/app/components/selection/selection_toolbar.blp:36
+#: src/app/components/selection/selection_toolbar.blp:52
 msgid "Add to queue"
 msgstr "Toevoegen aan wachtrij"
 
@@ -34,93 +47,50 @@ msgstr "Verwijderen uit wachtrij"
 msgid "Add to {}"
 msgstr "Toevoegen aan {}"
 
-#. translators: This notification shows up right after login if the password could not be stored in the keyring (that is, GNOME's keyring aka seahorse, or any other libsecret compliant secret store).
-#: src/app/components/login/login_model.rs:68
-msgid "Could not save password. Make sure the session keyring is unlocked."
-msgstr "Het wachtwoord kan niet worden opgeslagen - zorg dat de sessiesleutelhanger ontgrendeld is."
+#. translators: This shows up when in selection mode. This text should be as short as possible.
+#: src/app/components/labels.rs:30
+msgid "{} song selected"
+msgid_plural "{} songs selected"
+msgstr[0] "{} nummer geselecteerd"
+msgstr[1] "{} nummers geselecteerd"
 
-#. translators: This notification is the default message for unhandled errors. Logs refer to console output.
-#: src/app/batch_loader.rs:100 src/app/components/mod.rs:129
-msgid "An error occured. Check logs for details!"
-msgstr "Er is een fout opgetreden - bekijk het logboek!"
+#. translators: This is part of a contextual menu attached to a single track; the full text is "More from <artist>".
+#: src/app/components/labels.rs:39
+msgid "More from {}"
+msgstr "Meer van {}"
+
+#. translators: This is part of a larger label that reads "<Album> by <Artist>"
+#: src/app/components/labels.rs:48
+msgid "{} by {}"
+msgstr "{} van {}"
 
 #. translators: This is a sidebar entry to browse to saved albums.
-#: src/app/components/navigation/factory.rs:33
+#: src/app/components/navigation/factory.rs:30
 #: src/app/components/sidebar/sidebar_item.rs:39
 msgid "Library"
 msgstr "Verzameling"
 
-#. translators: This is a sidebar entry to browse to saved playlists.
-#: src/app/components/navigation/factory.rs:54
+#. translators: This is a sidebar entry that marks that the entries below are playlists.
+#: src/app/components/navigation/factory.rs:50
 #: src/app/components/sidebar/sidebar_item.rs:45
 msgid "Playlists"
 msgstr "Afspeellijsten"
 
-#. This is the visible name for the play queue. It appears in the sidebar as well.
-#: src/app/components/sidebar/sidebar_item.rs:43
-msgid "Now playing"
-msgstr "Je luistert naar"
-
-#. translators: Short text displayed instead of a song title when nothing plays
-#. Short text displayed instead of a song title when nothing plays
-#: src/app/components/playback/playback_info.rs:58
-#: src/app/components/playback/playback_info.blp:33
-msgid "No song playing"
-msgstr "Er wordt niks afgespeeld"
-
-#. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:67
-msgid "About"
-msgstr "Over"
-
-#. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:69
-msgid "Quit"
-msgstr "Afsluiten"
-
-#. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:74
-msgid "Log out"
-msgstr "Uitloggen"
-
-#: src/app/state/login_state.rs:97
-msgid "Connection restored"
-msgstr "De verbinding is hersteld"
-
-#. Title of the section that shows 5 of the top tracks for an artist, as defined by Spotify.
-#: src/app/components/artist_details/artist_details.blp:26
-msgid "Top tracks"
-msgstr "Topnummers"
-
-#. Title of the sections that contains all releases from an artist (both singles and albums).
-#: src/app/components/artist_details/artist_details.blp:54
-msgid "Releases"
-msgstr "Uitgaven"
-
-#. Login window title -- shouldn't be too long, but must mention Premium (a premium account is required).
-#: src/app/components/login/login.blp:49
-msgid "Login to Spotify Premium"
-msgstr "Inloggen op Spotify Premium"
-
-#. Log in button label
-#: src/app/components/login/login.blp:131
-msgid "Log in"
-msgstr "Inloggen"
-
-#. This is the title of a section of the search results
-#: src/app/components/search/search.blp:69
-msgid "Albums"
-msgstr "Albums"
-
-#. This is the title of a section of the search results
-#: src/app/components/search/search.blp:100
-msgid "Artists"
-msgstr "Artiesten"
-
-#: src/app/components/navigation/factory.rs:76
+#. translators: This is a sidebar entry to browse to saved tracks.
+#: src/app/components/navigation/factory.rs:71
 #: src/app/components/sidebar/sidebar_item.rs:41
 msgid "Saved tracks"
 msgstr "Opgeslagen nummers"
+
+#. translators: This is a notification that pop ups when a new playlist is created. It includes the name of that playlist.
+#: src/app/components/notification/mod.rs:25
+msgid "New playlist created."
+msgstr "De afspeellijst is aangemaakt."
+
+#. translators: This is a label in the notification shown after creating a new playlist. If it is clicked, the new playlist will be opened.
+#: src/app/components/notification/mod.rs:27
+msgid "View"
+msgstr "Bekijken"
 
 #: src/app/components/playback/playback_controls.rs:64
 msgid "Pause"
@@ -129,6 +99,276 @@ msgstr "Pauzeren"
 #: src/app/components/playback/playback_controls.rs:66
 msgid "Play"
 msgstr "Afspelen"
+
+#. translators: Short text displayed instead of a song title when nothing plays
+#. Translators: Short text displayed instead of a song title when nothing plays
+#: src/app/components/playback/playback_info.rs:58
+#: src/app/components/playback/playback_info.blp:33
+msgid "No song playing"
+msgstr "Er wordt niks afgespeeld"
+
+#: src/app/components/selection/component.rs:66
+msgid "Tracks saved!"
+msgstr "De nummers zijn opgeslagen!"
+
+#. translators: This is a sidebar entry to browse to saved playlists.
+#: src/app/components/sidebar/sidebar_item.rs:43
+msgid "Now playing"
+msgstr "Je luistert naar"
+
+#: src/app/components/sidebar/sidebar_item.rs:81
+msgid "All Playlists"
+msgstr "Alle afspeellijsten"
+
+#: src/app/components/sidebar/sidebar_item.rs:90
+msgid "New Playlist"
+msgstr "Nieuwe afspeellijst"
+
+#: src/app/components/sidebar/sidebar.rs:49
+msgid "Unnamed playlist"
+msgstr "Naamloze afspeellijst"
+
+#. translators: This is a menu entry.
+#: src/app/components/user_menu/user_menu.rs:70
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#. translators: This is a menu entry.
+#: src/app/components/user_menu/user_menu.rs:72
+msgid "About"
+msgstr "Over"
+
+#. translators: This is a menu entry.
+#: src/app/components/user_menu/user_menu.rs:74
+msgid "Quit"
+msgstr "Afsluiten"
+
+#. translators: This is a menu entry.
+#: src/app/components/user_menu/user_menu.rs:79
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: src/app/state/login_state.rs:97
+msgid "Connection restored"
+msgstr "De verbinding is hersteld"
+
+#: src/connect/player.rs:65
+msgid "Connection to device lost!"
+msgstr ""
+
+#: src/main.rs:85
+msgid "Failed to open link!"
+msgstr "De link kan niet worden geopend!"
+
+#. Translators: A title that is shown when the user has not saved any playlists.
+#: src/app/components/saved_playlists/saved_playlists.blp:26
+msgid "You have no saved playlists."
+msgstr "Je hebt nog geen opgeslagen afspeellijsten."
+
+#. Translators: A description of what happens when the user has saved playlists.
+#: src/app/components/saved_playlists/saved_playlists.blp:30
+msgid "Your playlists will be shown here."
+msgstr "Je afspeellijsten worden hier getoond."
+
+#. Translators: Title of the section that shows 5 of the top tracks for an artist, as defined by Spotify.
+#: src/app/components/artist_details/artist_details.blp:26
+msgid "Top tracks"
+msgstr "Topnummers"
+
+#. Translators: Title of the sections that contains all releases from an artist (both singles and albums).
+#: src/app/components/artist_details/artist_details.blp:54
+msgid "Releases"
+msgstr "Uitgaven"
+
+#. Translators: This is the title of a section of the search results
+#: src/app/components/search/search.blp:70
+msgid "Albums"
+msgstr "Albums"
+
+#. Translators: This is the title of a section of the search results
+#: src/app/components/search/search.blp:101
+msgid "Artists"
+msgstr "Artiesten"
+
+#. Translators: Title for the empty search page (initial state).
+#: src/app/components/search/search.blp:111
+msgid "Search Spotify."
+msgstr "Doorzoek Spotify."
+
+#. Translators: Subtitle for the empty search page (initial state).
+#: src/app/components/search/search.blp:115
+msgid "Type to search."
+msgstr "Typ om te zoeken"
+
+#. Translators: Header for a group of preference items regarding audio
+#: src/app/components/settings/settings.blp:11
+msgid "Audio"
+msgstr "Audio"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:16
+msgid "Audio Backend"
+msgstr "Audiobackend"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:29
+msgid "ALSA Device"
+msgstr "ALSA-apparaat"
+
+#. Translators: Description for the item (ALSA Device) in preferences
+#: src/app/components/settings/settings.blp:33
+msgid "Applied only if audio backend is ALSA"
+msgstr "Alleen van toepassing als het audiobackend is ingesteld op ALSA"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:43
+msgid "Audio Quality"
+msgstr "Audiokwaliteit"
+
+#: src/app/components/settings/settings.blp:46
+msgid "Normal"
+msgstr "Normaal"
+
+#: src/app/components/settings/settings.blp:47
+msgid "High"
+msgstr "Hoog"
+
+#: src/app/components/settings/settings.blp:48
+msgid "Very high"
+msgstr "Hoogst"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:56
+msgid "Gapless playback"
+msgstr "Afspelen zonder pauzes"
+
+#. Translators: Header for a group of preference items regarding the application's appearance
+#: src/app/components/settings/settings.blp:71
+msgid "Appearance"
+msgstr "Vormgeving"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:76
+msgid "Theme"
+msgstr "Thema"
+
+#: src/app/components/settings/settings.blp:79
+msgid "Light"
+msgstr "Licht"
+
+#: src/app/components/settings/settings.blp:80
+msgid "Dark"
+msgstr "Donker"
+
+#: src/app/components/settings/settings.blp:81
+msgid "System"
+msgstr "Systeem"
+
+#. Translators: Header for a group of preference items regarding network
+#: src/app/components/settings/settings.blp:90
+msgid "Network"
+msgstr "Netwerk"
+
+#. Translators: Title for an item in preferences
+#: src/app/components/settings/settings.blp:95
+msgid "Access Point Port"
+msgstr "Poort van toegangspunt"
+
+#. Translators: Longer description for an item (Access Point Port) in preferences
+#: src/app/components/settings/settings.blp:99
+msgid ""
+"Port used for connections to Spotify's Access Point. Set to 0 if any port is "
+"fine."
+msgstr ""
+"De poort die wordt gebruikt om verbinding te maken met Spotify's "
+"toegangspunt. 0 = elke poort."
+
+#: src/app/components/selection/selection_toolbar.blp:60
+msgid "Add to playlist..."
+msgstr "Toevoegen aan afspeellijst…"
+
+#: src/app/components/selection/selection_toolbar.blp:71
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: src/app/components/selection/selection_toolbar.blp:82
+msgid "Save to library"
+msgstr "Opslaan in verzameling"
+
+#. Translators: This refers to a music label
+#: src/app/components/details/release_details.blp:38
+msgid "Label"
+msgstr "Label"
+
+#. Translators: This refers to a release date
+#: src/app/components/details/release_details.blp:49
+msgid "Released"
+msgstr "Uitgebracht"
+
+#. Translators: This refers to a number of tracks
+#: src/app/components/details/release_details.blp:60
+msgid "Tracks"
+msgstr "Nummers"
+
+#: src/app/components/details/release_details.blp:69
+msgid "Copyright"
+msgstr "Copyright"
+
+#: src/app/components/login/login.blp:46
+msgid "Welcome to Spot"
+msgstr ""
+
+#. Translators: Login window title, must mention Premium (a premium account is required).
+#: src/app/components/login/login.blp:53
+msgid ""
+"Log in with your Spotify Account. A Spotify Premium subscription is required "
+"to use the app."
+msgstr ""
+
+#. Translators: This error is shown when authentication fails.
+#: src/app/components/login/login.blp:68
+msgid "An error occured when trying to connect."
+msgstr ""
+
+#. Translators: Log in button label
+#: src/app/components/login/login.blp:79
+msgid "Log in with Spotify..."
+msgstr ""
+
+#. Translators: Exit playlist edition
+#. Translators: Button label. Exits selection mode.
+#: src/app/components/playlist_details/playlist_headerbar.blp:54
+#: src/app/components/headerbar/headerbar.blp:50
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. Translators: Finish playlist edition
+#: src/app/components/playlist_details/playlist_headerbar.blp:70
+msgid "Done"
+msgstr "Klaar"
+
+#. Translators: Button label. Selects all visible songs.
+#: src/app/components/headerbar/headerbar.blp:64
+msgid "Select all"
+msgstr "Alles selecteren"
+
+#: src/app/components/device_selector/device_selector.blp:15
+msgid "Playing on"
+msgstr ""
+
+#: src/app/components/device_selector/device_selector.blp:24
+msgid "Refresh devices"
+msgstr ""
+
+#. Translators: label for the entry containing the name of a new playlist
+#: src/app/components/sidebar/create_playlist.blp:10
+msgid "Name"
+msgstr "Naam"
+
+#. Translators: Button that creates a new playlist
+#: src/app/components/sidebar/create_playlist.blp:30
+msgid "Create"
+msgstr "Aanmaken"
 
 #: src/app/components/playback/playback_controls.blp:15
 msgid "Shuffle"
@@ -146,260 +386,23 @@ msgstr "Volgende"
 msgid "Repeat"
 msgstr "Herhalen"
 
-#. A title that is shown when the user has not saved any playlists.
-#: src/app/components/saved_playlists/saved_playlists.blp:26
-msgid "You have no saved playlists."
-msgstr "Je hebt nog geen opgeslagen afspeellijsten."
-
-#. A description of what happens when the user has saved playlists.
-#: src/app/components/saved_playlists/saved_playlists.blp:30
-msgid "Your playlists will be shown here."
-msgstr "Je afspeellijsten worden hier getoond."
-
-#. A title that is shown when the user has not saved any albums.
+#. Translators: A title that is shown when the user has not saved any albums.
 #: src/app/components/library/library.blp:25
 msgid "You have no saved albums."
 msgstr "Je hebt nog geen opgeslagen albums."
 
-#. A description of what happens when the user has saved albums.
+#. Translators: A description of what happens when the user has saved albums.
 #: src/app/components/library/library.blp:29
 msgid "Your library will be shown here."
 msgstr "Je verzameling wordt hier getoond."
 
-#. translators: This shows up when in selection mode. This text should be as short as possible.
-#: src/app/components/labels.rs:30
-msgid "{} song selected"
-msgid_plural "{} songs selected"
-msgstr[0] "{} nummer geselecteerd"
-msgstr[1] "{} nummers geselecteerd"
+#~ msgid "Could not save password. Make sure the session keyring is unlocked."
+#~ msgstr ""
+#~ "Het wachtwoord kan niet worden opgeslagen - zorg dat de "
+#~ "sessiesleutelhanger ontgrendeld is."
 
-#. Title for the empty search page (initial state).
-#: src/app/components/search/search.blp:110
-msgid "Search Spotify."
-msgstr "Doorzoek Spotify."
+#~ msgid "Login to Spotify Premium"
+#~ msgstr "Inloggen op Spotify Premium"
 
-#. Subtitle for the empty search page (initial state).
-#: src/app/components/search/search.blp:114
-msgid "Type to search."
-msgstr "Typ om te zoeken"
-
-#: src/app/components/selection/selection_toolbar.blp:61
-msgid "Remove"
-msgstr "Verwijderen"
-
-#. <property name="icon-name">playlist2-symbolic</property>
-#: src/app/components/selection/selection_toolbar.blp:49
-msgid "Add to playlist..."
-msgstr "Toevoegen aan afspeellijst…"
-
-#. Button label. Exits selection mode.
-#: src/app/components/playlist_details/playlist_headerbar.blp:53
-#: src/app/components/headerbar/headerbar.blp:49
-msgid "Cancel"
-msgstr "Annuleren"
-
-#. Button label. Selects all visible songs.
-#: src/app/components/headerbar/headerbar.blp:63
-msgid "Select all"
-msgstr "Alles selecteren"
-
-#. translators: This is part of a contextual menu attached to a single track; the full text is "More from <artist>".
-#: src/app/components/labels.rs:39
-msgid "More from {}"
-msgstr "Meer van {}"
-
-#. This refers to a music label
-#: src/app/components/details/release_details.blp:41
-msgid "Label"
-msgstr "Label"
-
-#. This refers to a release date
-#: src/app/components/details/release_details.blp:52
-msgid "Released"
-msgstr "Uitgebracht"
-
-#. This refers to a number of tracks
-#: src/app/components/details/release_details.blp:63
-msgid "Tracks"
-msgstr "Nummers"
-
-#: src/app/components/details/release_details.blp:72
-msgid "Copyright"
-msgstr "Copyright"
-
-#. translators: This is part of a larger label that reads "<Album> by <Artist>"
-#: src/app/components/labels.rs:48
-msgid "{} by {}"
-msgstr "{} van {}"
-
-#: src/app/components/sidebar/sidebar.rs:49
-msgid "Unnamed playlist"
-msgstr "Naamloze afspeellijst"
-
-#. translators: This is a sidebar entry to browse to saved playlists.
-#: src/app/components/sidebar/sidebar_item.rs:81
-msgid "All Playlists"
-msgstr "Alle afspeellijsten"
-
-#: src/app/components/selection/component.rs:66
-msgid "Tracks saved!"
-msgstr "De nummers zijn opgeslagen!"
-
-#. translators: This is a menu entry.
-#: src/app/components/user_menu/user_menu.rs:65
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-#: src/main.rs:85
-msgid "Failed to open link!"
-msgstr "De link kan niet worden geopend!"
-
-#. Header for a group of preference items regarding audio
-#: src/app/components/settings/settings.blp:13
-msgid "Audio"
-msgstr "Audio"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:18
-msgid "Audio Backend"
-msgstr "Audiobackend"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:31
-msgid "ALSA Device"
-msgstr "ALSA-apparaat"
-
-#. Description for the item (ALSA Device) in preferences
-#: src/app/components/settings/settings.blp:35
-msgid "Applied only if audio backend is ALSA"
-msgstr "Alleen van toepassing als het audiobackend is ingesteld op ALSA"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:45
-msgid "Audio Quality"
-msgstr "Audiokwaliteit"
-
-#: src/app/components/settings/settings.blp:48
-msgid "Normal"
-msgstr "Normaal"
-
-#: src/app/components/settings/settings.blp:49
-msgid "High"
-msgstr "Hoog"
-
-#: src/app/components/settings/settings.blp:50
-msgid "Very high"
-msgstr "Hoogst"
-
-#. Header for a group of preference items regarding the application's appearance
-#: src/app/components/settings/settings.blp:73
-msgid "Appearance"
-msgstr "Vormgeving"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:78
-msgid "Theme"
-msgstr "Thema"
-
-#: src/app/components/settings/settings.blp:81
-msgid "Light"
-msgstr "Licht"
-
-#: src/app/components/settings/settings.blp:82
-msgid "Dark"
-msgstr "Donker"
-
-#. Header for a group of preference items regarding network
-#: src/app/components/settings/settings.blp:92
-msgid "Network"
-msgstr "Netwerk"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:97
-msgid "Access Point Port"
-msgstr "Poort van toegangspunt"
-
-#. Longer description for an item (Access Point Port) in preferences
-#: src/app/components/settings/settings.blp:101
-msgid "Port used for connections to Spotify's Access Point. Set to 0 if any port is fine."
-msgstr "De poort die wordt gebruikt om verbinding te maken met Spotify's toegangspunt. 0 = elke poort."
-
-#: src/app/components/selection/selection_toolbar.blp:78
-msgid "Save to library"
-msgstr "Opslaan in verzameling"
-
-#. translators: This is a notification that pop ups when a new playlist is created. It includes the name of that playlist.
-#: src/app/components/notification/mod.rs:25
-msgid "New playlist created."
-msgstr "De afspeellijst is aangemaakt."
-
-#. translators: This is a label in the notification shown after creating a new playlist. If it is clicked, the new playlist will be opened.
-#: src/app/components/notification/mod.rs:27
-msgid "View"
-msgstr "Bekijken"
-
-#: src/app/components/sidebar/sidebar_item.rs:90
-msgid "New Playlist"
-msgstr "Nieuwe afspeellijst"
-
-#. Title for an item in preferences
-#: src/app/components/settings/settings.blp:58
-msgid "Gapless playback"
-msgstr "Afspelen zonder pauzes"
-
-#: src/app/components/settings/settings.blp:83
-msgid "System"
-msgstr "Systeem"
-
-#. Finish playlist edition
-#: src/app/components/playlist_details/playlist_headerbar.blp:69
-msgid "Done"
-msgstr "Klaar"
-
-#. label for the entry containing the name of a new playlist
-#: src/app/components/sidebar/create_playlist.blp:10
-msgid "Name"
-msgstr "Naam"
-
-#. Button that creates a new playlist
-#: src/app/components/sidebar/create_playlist.blp:30
-msgid "Create"
-msgstr "Aanmaken"
-
-#: src/app/components/device_selector/widget.rs:135
-#: src/app/components/device_selector/device_selector.blp:9
-#: src/app/components/device_selector/device_selector.blp:37
-msgid "This device"
-msgstr ""
-
-#: src/connect/player.rs:65
-msgid "Connection to device lost!"
-msgstr ""
-
-#: src/app/components/login/login.blp:46
-msgid "Welcome to Spot"
-msgstr ""
-
-#. Translators: Login window title, must mention Premium (a premium account is required).
-#: src/app/components/login/login.blp:53
-msgid "Log in with your Spotify Account. A Spotify Premium subscription is required to use the app."
-msgstr ""
-
-#. Translators: This error is shown when authentication fails.
-#: src/app/components/login/login.blp:68
-msgid "An error occured when trying to connect."
-msgstr ""
-
-#. Translators: Log in button label
-#: src/app/components/login/login.blp:79
-msgid "Log in with Spotify..."
-msgstr ""
-
-#: src/app/components/device_selector/device_selector.blp:15
-msgid "Playing on"
-msgstr ""
-
-#: src/app/components/device_selector/device_selector.blp:24
-msgid "Refresh devices"
-msgstr ""
-
+#~ msgid "Log in"
+#~ msgstr "Inloggen"
